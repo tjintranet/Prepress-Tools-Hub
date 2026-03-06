@@ -15,6 +15,7 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
             transition: background-color 0.3s, color 0.3s;
         }
         body.dark-mode {
@@ -88,7 +89,6 @@
         .theme-toggle:hover {
             background: rgba(255,255,255,0.3);
         }
-        
         .favorite-star {
             position: absolute;
             top: 10px;
@@ -126,6 +126,23 @@
         .filter-toggle:hover {
             background: rgba(255,255,255,0.3);
         }
+        .section-heading {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #6c757d;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #dee2e6;
+            margin-bottom: 1rem;
+        }
+        .dark-mode .section-heading {
+            color: #adb5bd;
+            border-bottom-color: #444;
+        }
+        .section-heading i {
+            margin-right: 0.4rem;
+        }
     </style>
 </head>
 <body>
@@ -147,10 +164,13 @@
         </div>
     </div>
 
-    <div class="container tools-container py-3">
-        <div class="row g-3">
-            
-            <!-- Excel to XML for DBS -->
+    <div class="container tools-container py-4">
+
+        <!-- ── Production Tools ── -->
+        <div class="section-heading"><i class="bi bi-gear-fill"></i>Production Tools</div>
+        <div class="row g-3 mb-4">
+
+            <!-- PACE Metadata to XML for DBS -->
             <div class="col-md-4 col-lg-3">
                 <div class="card tool-card" data-tool-id="excel-xml-dbs">
                     <i class="bi bi-bookmark-fill favorite-star" onclick="toggleFavorite(event, 'excel-xml-dbs')"></i>
@@ -162,7 +182,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- DBS Datamatrix Barcode Generator -->
             <div class="col-md-4 col-lg-3">
                 <div class="card tool-card" data-tool-id="dbs-datamatrix">
@@ -172,19 +192,6 @@
                         <h5 class="card-title">DBS Datamatrix Barcodes</h5>
                         <p class="card-text">Create DBS Datamatrix</p>
                         <a href="https://tjintranet.github.io/DBS-Datamatrix-Generator/" class="btn btn-primary btn-sm">Open</a>
-                    </div>
-                </div>
-            </div>  
-
-            <!-- Book Weight Calculator -->
-            <div class="col-md-4 col-lg-3">
-                <div class="card tool-card" data-tool-id="book-weight">
-                    <i class="bi bi-bookmark-fill favorite-star" onclick="toggleFavorite(event, 'book-weight')"></i>
-                    <div class="card-body text-center">
-                        <i class="bi bi-calculator-fill card-icon"></i>
-                        <h5 class="card-title">Book Weight Calculator</h5>
-                        <p class="card-text">Calculate Book Weights</p>
-                        <a href="https://tjintranet.github.io/POD-Book-Weight-Calculator/" class="btn btn-primary btn-sm">Open</a>
                     </div>
                 </div>
             </div>
@@ -200,7 +207,7 @@
                         <a href="https://tjintranet.github.io/Spine-Calculator/" class="btn btn-primary btn-sm">Open</a>
                     </div>
                 </div>
-            </div>  
+            </div>
 
             <!-- Micron to Volume Converter -->
             <div class="col-md-4 col-lg-3">
@@ -213,8 +220,8 @@
                         <a href="https://tjintranet.github.io/Micron-To-Volume-Converter/" class="btn btn-primary btn-sm">Open</a>
                     </div>
                 </div>
-            </div>    
-            
+            </div>
+
             <!-- QR Code Generator -->
             <div class="col-md-4 col-lg-3">
                 <div class="card tool-card" data-tool-id="qr-generator">
@@ -226,7 +233,26 @@
                         <a href="https://tjintranet.github.io/QR-Code-Generator/" class="btn btn-primary btn-sm">Open</a>
                     </div>
                 </div>
-            </div> 
+            </div>
+
+            <!-- PDF Dummy Pages -->
+            <div class="col-md-4 col-lg-3">
+                <div class="card tool-card" data-tool-id="pdf-dummies">
+                    <i class="bi bi-bookmark-fill favorite-star" onclick="toggleFavorite(event, 'pdf-dummies')"></i>
+                    <div class="card-body text-center">
+                        <i class="bi bi-file-earmark-pdf card-icon"></i>
+                        <h5 class="card-title">PDF Dummy Pages</h5>
+                        <p class="card-text">Create PDFs for Testing Impositions</p>
+                        <a href="https://tjintranet.github.io/PDF-Dummy-Page-Generator/" class="btn btn-primary btn-sm">Open</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ── Development Tools ── -->
+        <div class="section-heading"><i class="bi bi-code-slash"></i>Development Tools</div>
+        <div class="row g-3 mb-4">
 
             <!-- XML Parser -->
             <div class="col-md-4 col-lg-3">
@@ -254,7 +280,7 @@
                 </div>
             </div>
 
-            <!-- Enhanced XML Reader-->
+            <!-- Enhanced XML Reader -->
             <div class="col-md-4 col-lg-3">
                 <div class="card tool-card" data-tool-id="enhanced-xml">
                     <i class="bi bi-bookmark-fill favorite-star" onclick="toggleFavorite(event, 'enhanced-xml')"></i>
@@ -265,7 +291,7 @@
                         <a href="https://tjintranet.github.io/Enhanced-XML-Reader/" class="btn btn-primary btn-sm">Open</a>
                     </div>
                 </div>
-            </div>  
+            </div>
 
             <!-- XSLT Transformer -->
             <div class="col-md-4 col-lg-3">
@@ -278,21 +304,11 @@
                         <a href="https://tjintranet.github.io/XSLT-Transform-Tester/" class="btn btn-primary btn-sm">Open</a>
                     </div>
                 </div>
-            </div>     
+            </div>
 
-            <!-- PDF Dummies -->
-            <div class="col-md-4 col-lg-3">
-                <div class="card tool-card" data-tool-id="xslt-transformer">
-                    <i class="bi bi-bookmark-fill favorite-star" onclick="toggleFavorite(event, 'xslt-transformer')"></i>
-                    <div class="card-body text-center">
-                        <i class="bi bi-file-earmark-pdf card-icon"></i>
-                        <h5 class="card-title">PDF Dummy Pages</h5>
-                        <p class="card-text">Create PDF's for Testing Impositions</p>
-                        <a href="https://tjintranet.github.io/PDF-Dummy-Page-Generator/" class="btn btn-primary btn-sm">Open</a>
-                    </div>
-                </div>
-            </div>     
         </div>
+
+    </div><!-- /.container -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -356,11 +372,11 @@
             if (body.classList.contains('dark-mode')) {
                 icon.classList.replace('bi-sun-fill', 'bi-moon-fill');
                 localStorage.setItem('prepressTheme', 'dark');
-                document.body.style.background = 'linear-gradient(180deg, #000000 0%, #121212 100%)';
+                body.style.background = 'linear-gradient(180deg, #000000 0%, #121212 100%)';
             } else {
                 icon.classList.replace('bi-moon-fill', 'bi-sun-fill');
                 localStorage.setItem('prepressTheme', 'light');
-                document.body.style.background = '#f8f9fa';
+                body.style.background = '#f8f9fa';
             }
         }
 
@@ -369,7 +385,7 @@
             if (savedTheme === 'dark') {
                 document.body.classList.add('dark-mode');
                 document.querySelector('.theme-toggle i').classList.replace('bi-sun-fill', 'bi-moon-fill');
-                document.body.style.backgroundColor = '#000000';
+                document.body.style.background = 'linear-gradient(180deg, #000000 0%, #121212 100%)';
             }
             
             favorites.forEach(toolId => {
